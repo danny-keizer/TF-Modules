@@ -51,6 +51,9 @@ Providing outputs is not mandatory but is preferred.                            
 Outlines the general purpose of the module.                                         <br />
 This file should also contain a brief example of the module in use.
 
-<span style="color:4136be">
-Authored by: Danny Keizer
-</span>
+## Useful links
+- [Terraform Registry](https://registry.terraform.io/)
+- [Developing Modules](https://developer.hashicorp.com/terraform/language/modules/develop)
+- [Authentication](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity)
+
+#### Authored by Danny Keizer
