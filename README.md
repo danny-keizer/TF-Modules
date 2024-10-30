@@ -19,10 +19,9 @@ Before adding a new module to this repository please consider the following:
 [MODULE]-[PLATFORM]-[TYPE]
 ```
 ```
+MODULE-AZURE-COMPUTE
+MODULE-AZURE-NETWORK
 MODULE-AZURE-STORAGE
-MODULE-AZURE-STORAGE
-MODULE-AZURE-DATABASE
-MODULE-ORACLE-VIRTUALMACHINE
 ```
 
 ### Module File Structure
