@@ -13,6 +13,6 @@ resource "local_file" "example3" {
   content  = "Third file"
 
   provisioner "local-exec" {
-    command = "powershell -File ${path.module}\\install.ps1"
+    command = "pwsh -File ${path.module}\\provisioner-tasks.ps1"
   }
 }
