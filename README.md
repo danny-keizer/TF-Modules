@@ -26,7 +26,7 @@ MODULE-AZURE-STORAGE
 
 ### Module File Structure
 <span style="color:4136be">
-MODULE-AZURE-DATABASE/      <br />
+MODULE-AZURE-NETWORK/       <br />
 ├── main.tf                 <br />
 ├── variables.tf            <br />
 ├── outputs.tf              <br />
