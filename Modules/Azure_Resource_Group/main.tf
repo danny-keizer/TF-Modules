@@ -4,5 +4,5 @@ resource "azurerm_resource_group" "rg" {
 }
 
 output "id" {
-  value = data.azurerm_resource_group.rg.id
+  value = azurerm_resource_group.rg.id
 }
