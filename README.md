@@ -16,44 +16,42 @@ Before adding a new module to this repository please consider the following:
 ### Module Naming Scheme
 
 ```
-[MODULE]-[PLATFORM]-[TYPE]
+<Platform>_<Type>_<Variant>
 ```
+
 ```
-MODULE-AZURE-COMPUTE
-MODULE-AZURE-NETWORK
-MODULE-AZURE-STORAGE
+Azure_ResourceGroup
+Azure_VirtualMachine_Linux
+Azure_VirtualMachine_Windows
+Azure_StorageAccount
 ```
 
 ### Module File Structure
-<span style="color:4136be">
-MODULE-AZURE-NETWORK/       <br />
-├── main.tf                 <br />
-├── variables.tf            <br />
-├── outputs.tf              <br />
-├── META.md                 <br />
-</span>
+
+Azure_VirtualMachine_Windows/   <br />
+├── main.tf                     <br />
+├── variables.tf                <br />
+├── outputs.tf                  <br />
+├── readme.md                   <br />
 
 ### main.tf
-Contains the resources that will be created by invoking the module.                 <br />
-Try to use variables to pass parameters whenever it is possible.                    <br />
-A good module will balance simplicity with flexibility                              <br />
+Contains the resources that will be created by invoking the module. 
+Try to use variables to pass parameters whenever it is possible. A good module balances simplicity with flexibility.                             
 
 ### variables.tf
-Describes the variables required to fill parameters within the module.              <br />
-Do not assign defaults to variables in order to prevent unexpected behaviours.      <br />
-Instead, if any value should be static it should be hardcoded.                      <br />
+Declares the variables required to fill parameters within the module. Do not assign defaults to variables in order to prevent unexpected behaviours.      Instead, if any value should be static hardcode it.
 
 ### outputs.tf
 Describes the outputs that will be accessible.
-Providing outputs is not mandatory but is preferred.                                <br />
+Providing outputs is not mandatory but is preferred.
 
 ### META.md
-Outlines the general purpose of the module.                                         <br />
-This file should also contain a brief example of the module in use.
+Outlines the general purpose of the module.
+This file should also contain a usage example.
 
 ## Useful links
 - [Terraform Registry](https://registry.terraform.io/)
 - [Developing Modules](https://developer.hashicorp.com/terraform/language/modules/develop)
 - [Authentication](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity)
 
-#### Authored by Danny Keizer
+#### Authored by: Danny Keizer
