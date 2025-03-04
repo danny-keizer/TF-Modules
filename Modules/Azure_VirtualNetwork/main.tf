@@ -29,8 +29,8 @@ resource "azurerm_network_security_group" "nsg" {
 
 resource "azurerm_virtual_network" "vnet" {
   name                = var.virtualnetwork_name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
   address_space       = var.virtualnetwork_address_space
   dns_servers         = var.dns_servers
   tags                = var.tags
