@@ -35,7 +35,7 @@ variable "virtualnetwork_address_space" {
   validation {
     condition = alltrue([
     length(var.virtualnetwork_address_space) > 0,
-    length(var.virtualnetwork_address_space) < 1
+    length(var.virtualnetwork_address_space) < 2
                         ])
     error_message = "The address space list is out of range"
   }
@@ -62,7 +62,7 @@ variable "dns_servers" {
   type        = list(string)
 
   validation {
-    condition     = contains(["10.0.0.10", "10.0.0.20"], var.dns_servers)
+    condition     = contains(["10.0.1.2", "10.0.2.2"], var.dns_servers)
     error_message = "Choose a valid DNS server"
   }
 }

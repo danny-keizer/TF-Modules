@@ -4,8 +4,8 @@ data "azurerm_resource_group" "rg" {
 
 resource "azurerm_network_security_group" "nsg" {
   name                = var.networksecuritygroup_name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
 
   security_rule {
     name                       = "prd-app-all-allow-ingress"
