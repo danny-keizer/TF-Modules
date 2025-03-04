@@ -63,8 +63,8 @@ variable "dns_servers" {
 
   validation {
     condition = alltrue([
-    length(var.virtualnetwork_address_space) > 0,
-    length(var.virtualnetwork_address_space) < 3
+    length(var.dns_servers) > 0,
+    length(var.dns_servers) < 3
                         ])
     error_message = "The DNS server list is out of range"
   }
