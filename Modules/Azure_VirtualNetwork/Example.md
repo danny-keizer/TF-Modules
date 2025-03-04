@@ -19,11 +19,11 @@ module "vnet-dev-app" {
   virtualnetwork_subnets = [
     {
       name           = "sn-frontend"
-      address_prefix = "10.0.1.0/24"
+      address_prefix = ["10.0.1.0/24"]
     },
     {
       name           = "sn-backend"
-      address_prefix = "10.0.2.0/24"
+      address_prefix = ["10.0.2.0/24"]
     }
   ]
 }
