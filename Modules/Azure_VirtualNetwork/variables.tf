@@ -62,7 +62,9 @@ variable "dns_servers" {
   type        = list(string)
 
   validation {
-    condition     = contains(["10.0.1.2", "10.0.2.2"], var.dns_servers)
+    condition = alltrue([
+    for o in var.rules : contains(["10.0.1.2", "10.0.2.2"], var.dns_servers)
+                        ])
     error_message = "Choose a valid DNS server"
   }
 }
