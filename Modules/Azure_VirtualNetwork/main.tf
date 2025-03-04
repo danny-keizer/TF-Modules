@@ -51,7 +51,7 @@ resource "azurerm_virtual_network" "vnet" {
 
     content {
       name           = subnet.value.name
-      address_prefixes = subnet.value.address_prefix[0]
+      address_prefixes = tolist(subnet.value.address_prefix)
     }
   }
 }
