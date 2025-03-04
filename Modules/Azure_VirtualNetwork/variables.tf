@@ -63,9 +63,10 @@ variable "dns_servers" {
 
   validation {
     condition = alltrue([
-    for o in var.rules : contains(["10.0.1.2", "10.0.2.2"], var.dns_servers)
+    length(var.virtualnetwork_address_space) > 0,
+    length(var.virtualnetwork_address_space) < 3
                         ])
-    error_message = "Choose a valid DNS server"
+    error_message = "The DNS server list is out of range"
   }
 }
 
