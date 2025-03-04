@@ -45,13 +45,13 @@ resource "azurerm_virtual_network" "vnet" {
     delete = "1h"
     read   = "3m"
   }
+}
 
-  dynamic "subnet" {
-    for_each = var.virtualnetwork_subnets
+resource "azurerm_subnet" "subnet" {
+  for_each              = var.virtualnetwork_subnets
+  name                  = subnet.value.name
+  resource_group_name   = data.azurerm_resource_group.rg.name
+  virtual_network_name  = var.virtualnetwork_name
+  address_prefixes      = [subnet.value]
 
-    content {
-      name           = subnet.value.name
-      address_prefixes = tolist(subnet.value.address_prefix)
-    }
-  }
 }
